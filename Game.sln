@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InhaRPG", "InhaRPG\InhaRPG.vcxproj", "{3FD9761D-0498-4CCD-8AE3-61441C4E3A9D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlackJack", "BlackJack\BlackJack.vcxproj", "{4A516B21-1561-4FA9-999F-ECF340F97CFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{3FD9761D-0498-4CCD-8AE3-61441C4E3A9D}.Release|x64.Build.0 = Release|x64
 		{3FD9761D-0498-4CCD-8AE3-61441C4E3A9D}.Release|x86.ActiveCfg = Release|Win32
 		{3FD9761D-0498-4CCD-8AE3-61441C4E3A9D}.Release|x86.Build.0 = Release|Win32
+		{4A516B21-1561-4FA9-999F-ECF340F97CFD}.Debug|x64.ActiveCfg = Debug|x64
+		{4A516B21-1561-4FA9-999F-ECF340F97CFD}.Debug|x64.Build.0 = Debug|x64
+		{4A516B21-1561-4FA9-999F-ECF340F97CFD}.Debug|x86.ActiveCfg = Debug|Win32
+		{4A516B21-1561-4FA9-999F-ECF340F97CFD}.Debug|x86.Build.0 = Debug|Win32
+		{4A516B21-1561-4FA9-999F-ECF340F97CFD}.Release|x64.ActiveCfg = Release|x64
+		{4A516B21-1561-4FA9-999F-ECF340F97CFD}.Release|x64.Build.0 = Release|x64
+		{4A516B21-1561-4FA9-999F-ECF340F97CFD}.Release|x86.ActiveCfg = Release|Win32
+		{4A516B21-1561-4FA9-999F-ECF340F97CFD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

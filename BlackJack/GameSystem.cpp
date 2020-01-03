@@ -1,9 +1,9 @@
 #include "GameSystem.h"
-#include <cstdlib>
-#include <chrono>
 
+Card::Card(const Card& card):number(card.number),shape(card.shape)
+{
 
-
+}
 
 int Card::get_number() const
 {
@@ -15,36 +15,9 @@ int Card::get_shape() const
 	return shape;
 }
 
-BunchOfCard::BunchOfCard()
-{
-	cards.reserve(52);
+std::ostream& operator<<(std::ostream& stream, const Card& card) {
+	stream << "Num : " << std::setw(10)<<std::left<<card.number 
+		<< std::setw(8) << "Shape : " << card.shape
+		<< std::endl;
+	return stream;
 }
-
-BunchOfCard::~BunchOfCard()
-{
-	cards.clear();
-}
-
-void BunchOfCard::print_all_card() const
-{
-	for (auto& _card : cards)
-		std::cout << _card.get_number() << "\t" << _card.get_shape() << std::endl;
-}
-
-void BunchOfCard::shuffle_cards()
-{
-	srand(unsigned int(time));
-
-	for (int i = 0; i < 200; i++) {
-		int idx = rand() % 52;
-
-		int number = cards[idx].get_number();
-		int shape = cards[idx].get_shape();
-
-		Card temp(number, shape);
-		cards.erase(cards.begin() + idx);
-		cards.push_back(temp);
-	}//repeat 100 times
-
-}
-

@@ -39,7 +39,13 @@ public:
 	{
 		player_card.reserve(6);
 	}
+	~Player() {
+		player_card.clear();
+	}
 	void add_card(card_ptr card);
+	bool get_die();
+	int get_chip();
+	int get_current_num();
 	
 };//This class is for other computer, not gamer
 
@@ -49,4 +55,5 @@ public:
 	void add_chip(int _chip);
 	int bet_chip();
 	int double_down(int _chip);
+	friend std::ostream& operator<<(std::ostream& stream, const Gamer& gamer);
 };

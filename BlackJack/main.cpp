@@ -32,11 +32,47 @@ void print_deck(Deck& _deck) {
 		std::cout << *itr;
 }
 
+card_ptr take_card_from_deck(Deck& _deck) {
+	card_ptr temp = *_deck.begin();
+	_deck.pop_back();
+	return temp;
+}
+
+void print_current_status(Gamer& gamer) {
+	std::cout << "==================================================================\n"
+		<< gamer << "==================================================================" << std::endl;
+}
+
 int main() {
+	Gamer gamer;
 	Deck deck;
 	make_a_deck(deck);
 	shuffle_deck(deck);
 	
+	while (!deck.empty()) {
+		try
+		{
+			gamer.bet_chip();
+		}
+		catch (const std::exception& _error)
+		{
+			std::cout << _error.what() << std::endl;
+			std::cin.clear();
+			std::cin.ignore(100, '\n');
+			continue;
+		}
+		gamer.add_card(take_card_from_deck(deck));
+		gamer.add_card(take_card_from_deck(deck));
+		print_current_status(gamer);
+		
+
+
+
+
+
+
+	}
+
 	
 
 

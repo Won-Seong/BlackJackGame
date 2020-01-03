@@ -21,3 +21,34 @@ std::ostream& operator<<(std::ostream& stream, const Card& card) {
 		<< std::endl;
 	return stream;
 }
+
+void Player::add_card(card_ptr card)
+{
+	player_card.push_back(card);
+	current_sum_number += card->get_number();
+	if (current_sum_number > 21)
+		die = true;
+}
+
+void Gamer::add_chip(int _chip)
+{
+	chip += _chip;
+}
+
+int Gamer::bet_chip()
+{
+	int chip_to_bet;
+	std::cout << "How many chips do you bet?";
+	std::cin >> chip_to_bet;
+	chip -= chip_to_bet;
+	return chip_to_bet;
+
+}
+
+int Gamer::double_down(int _chip)
+{
+	chip -= _chip;
+	return _chip;
+}
+
+

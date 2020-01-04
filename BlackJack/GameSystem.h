@@ -28,11 +28,11 @@ public:
 	friend std::ostream& operator<<(std::ostream& stream, const Card& card) ;
 };
 
-class Player {
+class Player : public std::exception {
 protected:
 	int chip;
 	int current_sum_number;
-	std::vector<card_ptr> player_card;
+	Deck player_card;
 	bool die;//This become true when player die
 public:
 	Player() :chip(20),current_sum_number(0),die(false)
@@ -43,17 +43,34 @@ public:
 		player_card.clear();
 	}
 	void add_card(card_ptr card);
-	bool get_die();
-	int get_chip();
-	int get_current_num();
+	bool get_die () const ;
+	int get_chip() const ;
+	int get_current_num() const ;
 	
 };//This class is for other computer, not gamer
 
 class Gamer : public Player {
 public:
 	Gamer() : Player() {};
+	~Gamer() {
+		player_card.clear();
+	}
 	void add_chip(int _chip);
 	int bet_chip();
 	int double_down(int _chip);
 	friend std::ostream& operator<<(std::ostream& stream, const Gamer& gamer);
+};
+
+class Dealer {
+private:
+	Deck dealer_card;
+	int current_card_sum;
+public:
+	Dealer():current_card_sum(0) {};
+	~Dealer() {
+		dealer_card.clear();
+	}
+	void add_card(card_ptr card);
+	int get_current_sum() const;
+
 };

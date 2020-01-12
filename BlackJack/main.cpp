@@ -111,11 +111,12 @@ void gamer_algorithm(Gamer* gamer, Deck& deck,int* _table_chip) {
 		try
 		{
 			gamer->double_down(*_table_chip);
+			gamer->add_card(take_card_from_deck(deck));
 		}
 		catch (const std::exception& error)
 		{
 			std::cout<< error.what();
-			std::cout << "You're going to stay this time." << std::endl;
+			std::cout << " You're going to stay this time." << std::endl;
 		}
 		break;
 	case 2:
@@ -133,6 +134,11 @@ int who_is_the_winner(const Gamer* gamer, const Dealer* dealer, const int* _tabl
 		std::cout << "You burst..."
 			<< "\nDealer takes your chip!" << std::endl;
 		return 0;
+	}
+	else if (dealer->get_state() == LOSE) {
+		std::cout << "Dealer made burst!"
+			<< "\nYou can get your share." << std::endl;
+		return 1;
 	}
 
 	if (!dealer->is_black_jack()) {

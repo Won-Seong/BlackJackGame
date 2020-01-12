@@ -8,8 +8,8 @@ constexpr int MAX_CARDS_IN_DECK = 52;//There are 52 cards in a deck
 constexpr int MAX_CARD_NUMBER = 13;//How many numbers is a card able to have
 constexpr int MAX_CARD_SHAPE = 4;//How many Shapes is a card able to have
 constexpr int MAX_NUMBER = 10;//In blackjack, number can't exceed 10
-constexpr bool LOSE = true;
-constexpr bool NOT_LOSE = false;
+constexpr bool LOSE = true; // the state when you lose
+constexpr bool NOT_LOSE = false; // the state when you not lose
 enum { SPADE, HEART, CLOVER, DIAMOND };
 enum { JACK = 10, QUEEN = 10, KING = 10 };//In blackjack, these are 10
 class Card;
